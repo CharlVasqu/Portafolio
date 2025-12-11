@@ -1,0 +1,54 @@
+<section>
+    <div class="section-title">
+        <h2>Contacto</h2>
+        <div class="accent"></div>
+    </div>
+
+    <h3>¿Hablamos?</h3>
+    <p>Si quieres trabajar conmigo, envíame un mensaje y con gusto te responderé.</p>
+
+    <div class="card" style="margin-bottom:20px">
+        <p><strong>Email:</strong> vasquezrafaelcarlosadalberto@mail.com</p>
+         <br><br>
+        <p><strong>Teléfono:</strong> +503 6127-4495</p>
+         <br><br>
+        <p><strong>Ubicación:</strong> San Miguel Tepezontes, El Salvador</p>
+         <br><br>
+    </div>
+
+<form action="https://formsubmit.co/el/xugeki" method="POST">
+    <input type="hidden" name="_subject" value="Nuevo mensaje desde tu portafolio">
+    <input type="hidden" name="_captcha" value="false">
+    <!-- Elimina _next para probar -->
+    <!-- <input type="hidden" name="_next" value="http://127.0.0.1:5500/"> -->
+
+    <div>
+        <label for="name">Tu nombre</label>
+        <input type="text" id="name" name="name" required placeholder="Tu nombre">
+    </div>
+
+    <div>
+        <label for="email">Tu email</label>
+        <input type="email" id="email" name="email" required placeholder="Tu email">
+    </div>
+
+    <div>
+        <label for="mensaje">Tu mensaje</label>
+        <textarea id="mensaje" name="message" rows="4" required placeholder="Escribe tu mensaje..."></textarea>
+    </div>
+
+    <button type="submit">Enviar mensaje</button>
+</form>
+
+
+    <script>
+        // Recibir mensaje automático
+        const params = new URLSearchParams(window.location.search);
+        const proyecto = params.get("proyecto");
+
+        if (proyecto) {
+            document.getElementById("mensaje").value =
+                "Quiero saber más del proyecto: " + proyecto;
+        }
+    </script>
+</section>
