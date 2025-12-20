@@ -485,3 +485,126 @@ html, body {
 .contact-form button[type="submit"]:hover {
   background: #9f5cff; /* morado más brillante al hover */
 }
+
+:root{
+  --bg: #0b0710;
+  --panel: #111018;
+  --card: #161219;
+  --text: #e9e6ee;
+  --muted: #9b90a3;
+  --accent: #7b4de6;
+  --accent-2: #2ea3ff;
+  --success: #28a745;
+  --card-border: rgba(255,255,255,0.03);
+}
+
+/* Contenedor principal de contacto */
+.contact-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 30px rgba(11,7,16,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  border-radius: 10px;
+  padding: 28px;
+  color: var(--text);
+}
+
+/* Título de sección con barra/underline en color de paleta */
+.section-title{
+  font-size: 28px;
+  color: var(--text);
+  margin-bottom: 22px;
+  position: relative;
+  padding-bottom: 12px;
+}
+.section-title::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 48px;
+  height: 4px;
+  background: var(--accent-2);
+  border-radius: 3px;
+  box-shadow: 0 4px 14px rgba(46,163,255,0.08);
+}
+
+/* Filas de info (icon + texto) */
+.contact-row{
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.contact-label{
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+  min-width: 110px;
+}
+.contact-value{
+  color: var(--text);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* Icono dentro de un pequeño badge */
+.icon-badge{
+  width: 44px;
+  height: 44px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 9px;
+  background: linear-gradient(135deg, rgba(123,77,230,0.10), rgba(46,163,255,0.04));
+  color: var(--accent);
+  flex: 0 0 44px;
+}
+
+/* Links (email, tel, redes) */
+.contact-card a{
+  color: var(--accent-2);
+  text-decoration: none;
+  transition: color .16s ease, transform .12s ease;
+}
+.contact-card a:hover{
+  color: var(--accent);
+  text-decoration: underline;
+  transform: translateY(-1px);
+}
+
+/* Botones sociales: estilo genérico + whatsapp con color propio */
+.social-list{
+  display:flex;
+  gap: 10px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+.social-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:600;
+  font-size:14px;
+  color:var(--text);
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.04);
+  transition: all .14s ease;
+}
+.social-btn:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(123,77,230,0.08);
+}
+.social-btn.whatsapp{
+  background: linear-gradient(180deg, rgba(40,167,69,0.12), rgba(40,167,69,0.06));
+  border-color: rgba(40,167,69,0.12);
+  color: #eaf7ee;
+}
+
+/* Responsive pequeño */
+@media (max-width: 900px){
+  .contact-row{ flex-direction: row; gap:10px; }
+  .contact-label{ min-width: 90px; font-size:12px; }
+}
+
